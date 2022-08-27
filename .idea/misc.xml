@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Become-Captain-America/app/src/main/res/drawable/ic_launcher_background.xml" value="0.166" />
+        <entry key="..\:/Become-Captain-America/app/src/main/res/drawable/ratingbar_custom.xml" value="0.166" />
+        <entry key="..\:/Become-Captain-America/app/src/main/res/layout/activity_feedback.xml" value="0.25" />
+        <entry key="..\:/Become-Captain-America/app/src/main/res/layout/activity_login.xml" value="0.38333333333333336" />
+        <entry key="..\:/Become-Captain-America/app/src/main/res/layout/activity_main.xml" value="0.38333333333333336" />
+        <entry key="..\:/Become-Captain-America/app/src/main/res/layout/activity_register.xml" value="0.38333333333333336" />
         <entry key="..\:/Users/Jannp/AndroidStudioProjects/Become-Captain-America/app/src/main/res/layout/activity_login.xml" value="0.375" />
         <entry key="..\:/Users/Jannp/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_login.xml" value="0.353713768115942" />
         <entry key="..\:/Users/Jannp/AndroidStudioProjects/FitnessApplication/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
