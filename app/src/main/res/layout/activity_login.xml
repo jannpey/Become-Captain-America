@@ -96,6 +96,8 @@
         android:layout_marginTop="16dp"
         android:text="New Here ?  Create Account"
         android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
@@ -106,6 +108,7 @@
         android:layout_height="wrap_content"
         android:text="Forgot Password ?"
         android:textColor="#000000"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
