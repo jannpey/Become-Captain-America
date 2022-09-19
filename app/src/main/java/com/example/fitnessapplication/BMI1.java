@@ -2,6 +2,7 @@ package com.example.fitnessapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -43,9 +44,12 @@ public class BMI1 extends AppCompatActivity {
             result.setText(calculation);
 
 
-
-
         }
+
+    public void home(View view) {
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        finish();
+    }
 
 
     }
