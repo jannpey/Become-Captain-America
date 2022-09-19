@@ -47,7 +47,7 @@ public class BMI1 extends AppCompatActivity {
         }
 
     public void home(View view) {
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        startActivity(new Intent(getApplicationContext(), Home.class));
         finish();
     }
 

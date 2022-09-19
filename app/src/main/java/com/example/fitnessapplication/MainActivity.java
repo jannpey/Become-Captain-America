@@ -22,8 +22,10 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
-    public void BMI(View view) {
-        startActivity(new Intent(getApplicationContext(), BMI1.class));
+    public void Home(View view) {
+        startActivity(new Intent(getApplicationContext(), Home.class));
         finish();
     }
+
+
 }
