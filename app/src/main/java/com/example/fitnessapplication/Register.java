@@ -28,7 +28,7 @@ import java.util.Objects;
 
 public class Register extends AppCompatActivity {
     public static final String TAG = "TAG";
-    EditText mFullName,mEmail,mPassword,mPhone;
+    EditText mFullName,mEmail,mPassword;
     Button mRegisterBtn;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
@@ -45,7 +45,6 @@ public class Register extends AppCompatActivity {
         mFullName = findViewById(R.id.fullName);
         mEmail = findViewById(R.id.Email);
         mPassword = findViewById(R.id.password);
-        mPhone = findViewById(R.id.phone);
         mRegisterBtn = findViewById(R.id.registerBtn);
         mLoginBtn = findViewById(R.id.createText);
 
@@ -64,7 +63,6 @@ public class Register extends AppCompatActivity {
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
                 String fullname = mFullName.getText().toString();
-                String phone = mPhone.getText().toString();
 
                 if (TextUtils.isEmpty(email)){
                     mEmail.setError("Email Is Required.");
@@ -89,14 +87,16 @@ public class Register extends AppCompatActivity {
                         if(task.isSuccessful()){
                             Toast.makeText(Register.this, "User Created", Toast.LENGTH_SHORT).show();
                             userID = fAuth.getCurrentUser().getUid();
-                            DocumentReference documentReference = fstore.collection("users").document(userID);
                             Map<String, Object> user = new HashMap<>();
                             user.put("fName", fullname);
                             user.put("email", email);
-                            user.put("phone", phone);
-                            documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
+
+
+                        fstore.collection("users").document(userID)
+
+                            .set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
-                                public void onSuccess(Void unused) {
+                                public void onSuccess(Void aVoid) {
                                     Log.d(TAG, "OnSuccess: user Profile is created for" + userID);
                                 }
                             });
