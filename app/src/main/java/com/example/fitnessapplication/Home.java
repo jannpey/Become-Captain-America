@@ -23,4 +23,9 @@ public class Home extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
         finish();
     }
+
+    public void feedback(View view) {
+        startActivity(new Intent(getApplicationContext(), Feedback.class));
+        finish();
+    }
 }
