@@ -93,9 +93,9 @@
         app:layout_constraintTop_toBottomOf="@+id/ex1">
 
         <ImageView
-            android:src="@drawable/best_bicep_exercises"
             android:layout_width="110dp"
-            android:layout_height="70dp"/>
+            android:layout_height="70dp"
+            android:src= "@drawable/best_bicep_exercises" />
 
         <LinearLayout
             android:layout_marginLeft="12dp"
