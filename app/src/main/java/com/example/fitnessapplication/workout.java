@@ -29,5 +29,10 @@ public class workout extends AppCompatActivity {
 
     }
 
+    public void Home1(View view) {
+        startActivity(new Intent(getApplicationContext(), Home.class));
+        finish();
+    }
+
 
 }
