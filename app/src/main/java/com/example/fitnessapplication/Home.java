@@ -25,7 +25,7 @@ public class Home extends AppCompatActivity {
     }
 
     public void workout(View view) {
-        startActivity(new Intent(getApplicationContext(), Home.class));
+        startActivity(new Intent(getApplicationContext(), workout.class));
         finish();
     }
 
