@@ -54,6 +54,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), Home.class));
         finish();
     }
+    public void feedback(View view) {
+        startActivity(new Intent(getApplicationContext(), Feedback.class));
+        finish();
+    }
 
 
 }
