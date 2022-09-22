@@ -8,6 +8,13 @@
     android:padding="5sp"
     tools:context=".Feedback">
 
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Home"
+        android:onClick="HOME"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,32 +33,31 @@
         android:layout_gravity="center"
         app:srcCompat="@drawable/background" />
 
+    <TextView
+        android:id="@+id/tvFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Very Satisfied" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="47dp"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
-        <TextView
+        <RatingBar
+            android:id="@+id/rbStars"
             android:layout_width="wrap_content"
-            android:layout_height="45dp"
-            android:layout_weight="1"
-            android:fontFamily="@font/adamina"
-            android:gravity="center|center_horizontal"
-            android:text="Rate your Experience"
-            android:textSize="20sp" />
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:background="#000000"
+            android:numStars="5"
+            android:progressDrawable="@drawable/ratingbar_custom"
+            android:rating="3.5"
+            android:stepSize="0.5" />
 
     </LinearLayout>
-
-    <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_gravity="center_horizontal"
-        android:background="#000000"
-        android:numStars="5"
-        android:progressDrawable="@drawable/ratingbar_custom"
-        android:rating="3.5"
-        android:stepSize="0.5" />
 
     <EditText
         android:id="@+id/editTextTextMultiLine"

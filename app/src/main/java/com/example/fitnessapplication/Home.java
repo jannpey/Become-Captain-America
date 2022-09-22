@@ -18,4 +18,10 @@ public class Home extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), BMI1.class));
         finish();
     }
+
+    public void profile(View view) {
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        finish();
+    }
+
 }
