@@ -81,7 +81,7 @@ public class Register extends AppCompatActivity {
 
                 progressBar.setVisibility(View.VISIBLE);
 
-                fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() { // Create email and password in Firebase Auth
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
@@ -92,7 +92,7 @@ public class Register extends AppCompatActivity {
                             user.put("email", email);
 
 
-                        fstore.collection("users").document(userID)
+                        fstore.collection("users").document(userID) // Store the User Details in FireStore
 
                             .set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override

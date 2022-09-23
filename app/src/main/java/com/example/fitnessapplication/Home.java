@@ -15,17 +15,17 @@ public class Home extends AppCompatActivity {
     }
 
     public void BMI(View view) {
-        startActivity(new Intent(getApplicationContext(), BMI1.class));
+        startActivity(new Intent(getApplicationContext(), BMI1.class)); //When the button pressed it will move to BMI Page
         finish();
     }
 
     public void profile(View view) {
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));//When the button pressed it will move to Profile Page
         finish();
     }
 
     public void workout(View view) {
-        startActivity(new Intent(getApplicationContext(), workout.class));
+        startActivity(new Intent(getApplicationContext(), workout.class));//When the button pressed it will move to Workout Page
         finish();
     }
 

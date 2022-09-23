@@ -27,13 +27,14 @@ public class Login extends AppCompatActivity {
     Button mLoginBtn;
     TextView mCreateBtn, forgotTextLink;
     ProgressBar progressBar;
-    FirebaseAuth fAuth;
+    FirebaseAuth fAuth; // Use to connect to the Firebase Auth
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // These are the Button, Text View and Progress Bar that I had created in the design page
         mEmail = findViewById(R.id.Email);
         mPassword = findViewById(R.id.password);
         progressBar = findViewById(R.id.progressBar2);
@@ -46,8 +47,8 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String email = mEmail.getText().toString().trim();
-                String password = mPassword.getText().toString().trim();
+                String email = mEmail.getText().toString().trim(); //Get Email
+                String password = mPassword.getText().toString().trim();// Get Password
 
                 if(TextUtils.isEmpty(email)){
                     mEmail.setError("Email is Required.");
@@ -111,7 +112,7 @@ public class Login extends AppCompatActivity {
                         fAuth.sendPasswordResetEmail(mail).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) { // When the email is valid and in the database the reset link will sent to the email
-                                Toast.makeText(Login.this, "Reset Link Sent To YOur Email", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Login.this, "Reset Link Sent To Your Email", Toast.LENGTH_SHORT).show();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override

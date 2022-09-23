@@ -37,7 +37,7 @@ public class BMI1 extends AppCompatActivity {
             float weightV = Float.parseFloat(S1);
             float heightV = Float.parseFloat(S2)/100;
 
-            float bmi = weightV / (heightV  * heightV);
+            float bmi = weightV / (heightV  * heightV); // Use to calculate the BMI
 
             calculation = "Result: \n\n" + bmi;
 
