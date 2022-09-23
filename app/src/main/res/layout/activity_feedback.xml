@@ -30,29 +30,21 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="200sp"
-        android:layout_height="245dp"
+        android:layout_height="235dp"
         android:layout_gravity="center"
         app:srcCompat="@drawable/background" />
 
-    <TextView
-        android:id="@+id/tvFeedback"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Very Satisfied" />
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="47dp"
+        android:layout_height="63dp"
         android:gravity="center_horizontal"
         android:orientation="horizontal">
 
         <RatingBar
             android:id="@+id/rbStars"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:background="#000000"
             android:numStars="5"
             android:progressDrawable="@drawable/ratingbar_custom"
             android:rating="3.5"
@@ -60,23 +52,44 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/tvFeedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text="Very Satisfied" />
+
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40sp"
         android:layout_marginRight="40sp"
         android:gravity="start|top"
+        android:hint="Name"
+        />
+
+    <EditText
+        android:id="@+id/feedback"
+        android:layout_width="match_parent"
+        android:layout_height="149dp"
+        android:layout_marginLeft="40sp"
+        android:layout_marginRight="40sp"
+        android:gravity="start|top"
         android:hint="Enter your feedback"
         android:inputType="textMultiLine"
-        android:lines="8" />
+        android:lines="7" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_send"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100sp"
         android:layout_marginRight="100sp"
-        android:text="Send feedback" />
+        android:text="Send FeedBack"
+        android:onClick="feedbacksent"
+        />
 
 </LinearLayout>

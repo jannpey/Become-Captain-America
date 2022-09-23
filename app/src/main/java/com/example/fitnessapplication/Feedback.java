@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Feedback extends AppCompatActivity {
 
@@ -21,6 +24,22 @@ public class Feedback extends AppCompatActivity {
         tvFeedback = findViewById(R.id.tvFeedback);
         rbStars = findViewById(R.id.rbStars);
 
+        final EditText name = findViewById(R.id.username);
+        final EditText feedback = findViewById(R.id.feedback);
+        Button btn = findViewById(R.id.btn_send);
+        FBaccess access = new FBaccess();
+        btn.setOnClickListener(v->{
+            FBmessage message = new FBmessage(name.getText().toString(),feedback.getText().toString());
+            access.add(message).addOnSuccessListener(suc ->
+            {
+                Toast.makeText(this, "Record is inserted", Toast.LENGTH_SHORT).show();
+            }).addOnFailureListener(er ->
+            {
+                Toast.makeText(this, "" + er.getMessage(), Toast.LENGTH_SHORT).show();
+            });
+
+
+        });
         rbStars.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
