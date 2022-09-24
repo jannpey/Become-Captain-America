@@ -20,7 +20,7 @@ public class Encouragement  extends AppCompatActivity {
     @Override
      protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_main);
         ImageButton = findViewById(R.id.but_enco);
         ImageButton.setOnClickListener(new View.OnClickListener(){
             @Override
