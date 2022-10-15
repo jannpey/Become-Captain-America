@@ -24,8 +24,8 @@ public class Home extends AppCompatActivity {
         finish();
     }
 
-    public void workout(View view) {
-        startActivity(new Intent(getApplicationContext(), workout.class));//When the button pressed it will move to Workout Page
+    public void Workout(View view) {
+        startActivity(new Intent(getApplicationContext(), WorkoutPage.class));//When the button pressed it will move to Workout Page
         finish();
     }
 
