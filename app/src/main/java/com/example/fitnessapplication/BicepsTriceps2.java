@@ -100,7 +100,7 @@ public class BicepsTriceps2 extends AppCompatActivity {
     }
 
     public void Finish3(View view) {
-        startActivity(new Intent(getApplicationContext(), Home.class));//When the button pressed it will move to Home Page
+        startActivity(new Intent(getApplicationContext(), WorkoutPage.class));//When the button pressed it will move to Workout Page
         finish();
     }
 }

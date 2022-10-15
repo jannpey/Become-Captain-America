@@ -101,7 +101,7 @@ public class Chest2 extends AppCompatActivity {
     }
 
     public void Finish1(View view) {
-        startActivity(new Intent(getApplicationContext(), Home.class));//When the button pressed it will move to Home Page
+        startActivity(new Intent(getApplicationContext(), WorkoutPage.class));//When the button pressed it will move to Workout Page
         finish();
     }
 }
