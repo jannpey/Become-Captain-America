@@ -101,9 +101,6 @@
             android:name=".Register"
             android:exported="false" />
         <activity
-            android:name=".workout"
-            android:exported="false" />
-        <activity
             android:name=".Login"
             android:exported="true">
             <intent-filter>
