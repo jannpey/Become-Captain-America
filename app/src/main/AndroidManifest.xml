@@ -22,14 +22,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Leg1"
+            android:name=".Chest2"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".Chest2"
+            android:name=".Leg1"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

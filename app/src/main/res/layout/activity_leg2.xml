@@ -31,7 +31,7 @@
         app:layout_constraintVertical_bias="0.103" />
 
     <Button
-        android:id="@+id/Leg1StartButton"
+        android:id="@+id/Leg2StartButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start"
@@ -41,4 +41,29 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Leg2Text"
         app:layout_constraintVertical_bias="0.154" />
+
+    <Button
+        android:id="@+id/Leg2RestButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rest"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintStart_toEndOf="@+id/Leg2StartButton"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.653"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/FinishButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Finish"
+        android:onClick="Finish2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Leg2StartButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>
