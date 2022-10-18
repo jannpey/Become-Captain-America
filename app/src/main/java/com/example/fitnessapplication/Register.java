@@ -28,7 +28,7 @@ import java.util.Objects;
 
 public class Register extends AppCompatActivity {
     public static final String TAG = "TAG";
-    EditText mFullName,mEmail,mPassword;
+    EditText mFullName,mEmail,mPassword,mWeight,mExpectedWeight;
     Button mRegisterBtn;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
@@ -45,6 +45,8 @@ public class Register extends AppCompatActivity {
         mFullName = findViewById(R.id.fullName);
         mEmail = findViewById(R.id.Email);
         mPassword = findViewById(R.id.password);
+        mWeight = findViewById(R.id.weight);
+        mExpectedWeight = findViewById(R.id.ExpectedWeight);
         mRegisterBtn = findViewById(R.id.registerBtn);
         mLoginBtn = findViewById(R.id.createText);
 
@@ -63,6 +65,10 @@ public class Register extends AppCompatActivity {
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
                 String fullname = mFullName.getText().toString();
+                String weight = mWeight.getText().toString();
+                String expectedWeight = mExpectedWeight.getText().toString();
+
+
 
                 if (TextUtils.isEmpty(email)){
                     mEmail.setError("Email Is Required.");
@@ -90,6 +96,8 @@ public class Register extends AppCompatActivity {
                             Map<String, Object> user = new HashMap<>();
                             user.put("fName", fullname);
                             user.put("email", email);
+                            user.put("weight", weight);
+                            user.put("ExpectedWeight", expectedWeight);
 
 
                         fstore.collection("users").document(userID) // Store the User Details in FireStore

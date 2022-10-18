@@ -21,7 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class MainActivity extends AppCompatActivity {
-    TextView fullName,email;
+    TextView fullName,email, weight, expectWeight;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userId;
@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         fullName = findViewById(R.id.profileName);
         email = findViewById(R.id.profileEmail);
+        weight = findViewById(R.id.profileWeight);
+        expectWeight = findViewById(R.id.profileExpectWeight);
 
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
@@ -47,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {
                 fullName.setText(documentSnapshot.getString("fName"));
                 email.setText(documentSnapshot.getString("email"));
+                weight.setText(documentSnapshot.getString("weight"));
+                expectWeight.setText(documentSnapshot.getString("ExpectedWeight"));
+
             }
         });
 
