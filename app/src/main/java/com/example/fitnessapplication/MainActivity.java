@@ -1,11 +1,15 @@
 package com.example.fitnessapplication;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -21,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userId;
+    Button button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
 
         userId = fAuth.getCurrentUser().getUid();
 
+        button = findViewById(R.id.ShareButton);
+
         DocumentReference documentReference = fStore.collection("users").document(userId); // Fetch the User Data from FireStore
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
@@ -42,7 +49,20 @@ public class MainActivity extends AppCompatActivity {
                 email.setText(documentSnapshot.getString("email"));
             }
         });
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent sendIntent =  new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.setType("text/plain");
+                sendIntent.putExtra(Intent.EXTRA_TEXT, "Download this fantastic app and share with your friends. \n\n https://play.google.com/store/apps/details?id="+getPackageName());
+                startActivity(Intent.createChooser(sendIntent,"Choose one"));
+            }
+        });
+
     }
+
 
     public void logout(View view) {
         FirebaseAuth.getInstance().signOut();
