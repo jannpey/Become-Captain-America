@@ -3,8 +3,13 @@ package com.example.fitnessapplication;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
     String userId;
-    Button button;
+    Button button,  notifyBtn;;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
         userId = fAuth.getCurrentUser().getUid();
 
         button = findViewById(R.id.ShareButton);
+
+        notifyBtn = findViewById(R.id.but_enco);
+
 
         DocumentReference documentReference = fStore.collection("users").document(userId); // Fetch the User Data from FireStore
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
@@ -63,6 +72,30 @@ public class MainActivity extends AppCompatActivity {
                 sendIntent.setType("text/plain");
                 sendIntent.putExtra(Intent.EXTRA_TEXT, "Download this fantastic app and share with your friends. \n\n https://play.google.com/store/apps/details?id="+getPackageName());
                 startActivity(Intent.createChooser(sendIntent,"Choose one"));
+            }
+        });
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel channel = new NotificationChannel("Notification", "Notification", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
+
+        notifyBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this,"Notification");
+                builder.setContentTitle("Encouragement");
+                builder.setContentText("The body achieves what the mind believes.");
+                builder.setSmallIcon(R.drawable.ic_launcher_background);
+                builder.setAutoCancel(true);
+
+                NotificationManagerCompat managerCompat = NotificationManagerCompat.from(MainActivity.this);
+                managerCompat.notify(1,builder.build());
+
+
+
             }
         });
 
