@@ -21,7 +21,6 @@ import java.util.ArrayList;
 
 public class MoveActivity extends AppCompatActivity {
 
-    SearchView searchView;
     ListView listView;
     ArrayAdapter<Move> adapter;
 
@@ -35,35 +34,9 @@ public class MoveActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_move);
 
-        //        searchView = findViewById(R.id.searchView);
         listView = findViewById(R.id.listView);
         list = new ArrayList<>();
 
-
-        // 1. read text file
-//        inputStream = getResources().openRawResource(R.raw.exercise_calories);
-//        bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
-//        MoveArray = new ArrayList<>();
-//
-//        try {
-//            String line;
-//            while (true) {
-//                line = (bufferedReader.readLine());
-//                if (line == null)
-//                    break;
-//                MoveArray.add(line);
-//
-//            }
-//            for (int i = 1; i < MoveArray.size()/5-2; i++) {
-//                list.add(new Move(MoveArray.get(5*i), '-' + MoveArray.get(5*i+1)));
-//            }
-//
-//            bufferedReader.close();
-//            inputStream.close();
-//
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
 
 
         //read from DB
@@ -91,17 +64,6 @@ public class MoveActivity extends AppCompatActivity {
                 }
             }
         });
-
-        //write to DB
-//        FirebaseDatabase database = FirebaseDatabase.getInstance();
-//        ref_move = database.getReference("DB_CaloriesInfo");
-//        for (int i =0; i<list.size(); i++){
-//            String id = ref_move.push().getKey();
-//
-//            ref_move.child("move").child(id).setValue(list.get(i));
-//        }
-
-
 
 
 
