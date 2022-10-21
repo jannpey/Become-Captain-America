@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this,"Notification");
                 builder.setContentTitle("Encouragement");
                 builder.setContentText("The body achieves what the mind believes.");
-                builder.setSmallIcon(R.drawable.ic_launcher_background);
+                builder.setSmallIcon(R.drawable.ic_baseline_fitness_center_24);
                 builder.setAutoCancel(true);
 
                 NotificationManagerCompat managerCompat = NotificationManagerCompat.from(MainActivity.this);
