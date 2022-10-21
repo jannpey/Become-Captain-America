@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EatActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center"
+        android:padding="@dimen/regularPad"
+        android:text="@string/record"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/largeText" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/regularPad">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/style_onbtn"
+            android:text="@string/eat"
+            android:textSize="@dimen/largeText"
+            android:textColor="@color/colorPrimaryOff"
+            android:layout_margin="10dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/style_offbtn"
+            android:onClick="goToRecordMove"
+            android:text="@string/move"
+            android:textColor="@color/black"
+            android:textSize="@dimen/largeText" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="206dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/regularPad"
+            android:text="@string/choose_from_list"
+            android:textColor="@color/colorPrimaryOff"
+            android:textSize="@dimen/regularText" />
+
+        <Button
+            android:onClick="goToRecordEatInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/regularPad"
+            android:background="@color/colorPrimaryOff"
+            android:text="@string/input_new_food"
+            android:textSize="@dimen/regularText"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:padding="@dimen/regularPad">-->
+
+    <!--<SearchView-->
+    <!--android:id="@+id/searchView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="30dp">-->
+    <!--</SearchView>-->
+
+    <!--</LinearLayout>-->
+
+
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="280dp">
+    </ListView>
+
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="bottom">
+
+        <ImageButton
+            android:onClick="goToOverview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:padding="@dimen/regularPad"
+            android:background="@color/colorPrimaryOff"
+            android:src="@drawable/ico_overview"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/regularPad"
+            android:src="@drawable/ico_record_wh" />
+
+        <ImageButton
+            android:onClick="goToHistory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:padding="@dimen/regularPad"
+            android:background="@color/colorPrimaryOff"
+            android:src="@drawable/ico_history"/>
+
+    </LinearLayout>
+
+</LinearLayout>

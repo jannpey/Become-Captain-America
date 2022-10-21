@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MoveActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/regularPad"
+        android:background="@color/white"
+        android:text="Record"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/largeText"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/regularPad">
+
+        <Button
+            android:onClick="goToRecordEat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/style_offbtn"
+            android:text="Eat"
+            android:textSize="@dimen/largeText"
+            android:textColor="@color/black"
+            android:layout_margin="10dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/style_onbtn"
+            android:text="Move"
+            android:textSize="@dimen/largeText"
+            android:textColor="@color/colorPrimaryOff"
+            android:layout_margin="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:padding="@dimen/regularPad"
+            android:text="@string/choose_from_list"
+            android:textColor="@color/colorPrimaryOff"
+            android:textSize="@dimen/regularText" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryOff"
+            android:onClick="MoveInput"
+            android:padding="@dimen/regularPad"
+            android:text="@string/input_new_exercise"
+            android:textColor="@color/black"
+            android:textSize="@dimen/regularText" />
+
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="280dp">
+    </ListView>
+
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        android:gravity="bottom">
+
+        <ImageButton
+            android:onClick="goToOverview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:padding="@dimen/regularPad"
+            android:background="@color/colorPrimaryOff"
+            android:src="@drawable/ico_overview"/>
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:padding="@dimen/regularPad"
+            android:background="@color/colorPrimary"
+            android:src="@drawable/ico_record_wh"/>
+
+        <ImageButton
+            android:onClick="goToHistory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:padding="@dimen/regularPad"
+            android:background="@color/colorPrimaryOff"
+            android:src="@drawable/ico_history"/>
+
+    </LinearLayout>
+
+</LinearLayout>

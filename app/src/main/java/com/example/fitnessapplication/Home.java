@@ -29,4 +29,9 @@ public class Home extends AppCompatActivity {
         finish();
     }
 
+    public void Calories(View view) {
+        startActivity(new Intent(getApplicationContext(), GetStart.class));//When the button pressed it will move to Workout Page
+        finish();
+    }
+
 }
