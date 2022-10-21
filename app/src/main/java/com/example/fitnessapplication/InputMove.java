@@ -54,6 +54,7 @@ public class InputMove extends AppCompatActivity {
             String id = ref_move.push().getKey();
             Move move = new Move(newExercise,newCaloriesLost);
             ref_move.child("move").child(id).setValue(move);
+            Toast.makeText(this,"Added to list",Toast.LENGTH_LONG).show();
         }else {
             Toast.makeText(this,"Please input exercise and calories lost",Toast.LENGTH_LONG).show();
         }
