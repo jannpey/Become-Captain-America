@@ -78,13 +78,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Calendar"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".TrapsBack2"
             android:exported="false">
             <meta-data
