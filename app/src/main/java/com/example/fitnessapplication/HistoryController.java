@@ -116,7 +116,7 @@ public class HistoryController extends AppCompatActivity {
 
 
         //setting current date
-        calendar.set(2018, 6, 20);
+        calendar.set(2022, 9, 21);
 
         calendarView.setDate(calendar);
 
