@@ -13,7 +13,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Feedback extends Activity {
+public class Feedback extends AppCompatActivity {
 
     TextView tvFeedback;
     RatingBar rbStars;

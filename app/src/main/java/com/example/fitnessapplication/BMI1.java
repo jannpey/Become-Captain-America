@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class BMI1 extends Activity {
+public class BMI1 extends AppCompatActivity {
 
     EditText weight, height;
     TextView result;
