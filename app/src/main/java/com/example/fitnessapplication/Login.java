@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,7 +23,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Login extends AppCompatActivity {
+public class Login extends Activity {
     EditText mEmail, mPassword;
     Button mLoginBtn;
     TextView mCreateBtn, forgotTextLink;
@@ -138,4 +139,25 @@ public class Login extends AppCompatActivity {
 
 
     }
+    protected boolean isPasswordLength(String password) {
+        if(password.length() < 6){
+            return true;
+        }
+        return false;
+    }
+
+    protected boolean isPasswordEmpty(String password) {
+        if(password.equals("")){
+            return true;
+        }
+        return false;
+    }
+
+    protected boolean isEmailEmpty(String email) {
+        if(email.equals("")){
+            return true;
+        }
+        return false;
+    }
+
 }

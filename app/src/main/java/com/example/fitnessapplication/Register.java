@@ -3,6 +3,7 @@ package com.example.fitnessapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -26,7 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class Register extends AppCompatActivity {
+public class Register extends Activity {
     public static final String TAG = "TAG";
     EditText mFullName,mEmail,mPassword,mWeight,mExpectedWeight;
     Button mRegisterBtn;
@@ -36,6 +37,27 @@ public class Register extends AppCompatActivity {
     FirebaseFirestore fstore;
     String userID;
 
+    protected boolean isPasswordLength(String password) {
+        if(password.length() < 6){
+            return true;
+        }
+        return false;
+    }
+
+    protected boolean isPasswordEmpty(String password) {
+        if(password.equals("")){
+
+            return true;
+        }
+        return false;
+    }
+
+    protected boolean isEmailEmpty(String email) {
+        if(email.equals("")){
+            return true;
+        }
+        return false;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
