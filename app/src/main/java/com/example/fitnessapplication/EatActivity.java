@@ -46,9 +46,6 @@ public class EatActivity extends AppCompatActivity {
         listView = findViewById(R.id.listView);
         list = new ArrayList<>();
 
-
-
-
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         ref_eat = database.getReference("DB_CaloriesInfo");
         ref_eat.addValueEventListener(new ValueEventListener() {
@@ -89,16 +86,6 @@ public class EatActivity extends AppCompatActivity {
 
             }
         });
-
-        //write to DB
-//        FirebaseDatabase database = FirebaseDatabase.getInstance();
-//        ref_eat = database.getReference("DB_CaloriesInfo");
-//
-//        for (int i =0; i<list.size(); i++){
-//            String id = ref_eat.push().getKey();
-//            ref_eat.child("eat").child(id).setValue(list.get(i));
-//        }
-
 
         // listView
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,list);
