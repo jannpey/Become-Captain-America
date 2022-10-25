@@ -218,8 +218,7 @@ public class HistoryController extends AppCompatActivity {
                     }
                 }
                 // calculate the sum of calories
-//                TextView sum = findViewById(R.id.sumOfCalories);
-//                sum.setText(String.valueOf(sumOfCalories));
+
 
                 System.out.println(sumOfCalories);
                 System.out.println(sumOfEatCal);
@@ -250,9 +249,6 @@ public class HistoryController extends AppCompatActivity {
 
     public void goToOverview(View view) {
         intent = new Intent(this, OverviewActivity.class);
-//        intent.putExtra("sumOfCalories",String.valueOf(sumOfCalories));
-//        intent.putExtra("sumOfMoveCal",String.valueOf(sumOfMoveCal * -1));
-//        intent.putExtra("sumOfEatCal",String.valueOf(sumOfEatCal));
 
         startActivity(intent);
     }

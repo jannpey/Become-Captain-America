@@ -100,7 +100,7 @@ public class OverviewActivity extends AppCompatActivity {
 
                     pieHelperArrayList.add(new PieHelper(percentageOfBurn, Color.rgb(78, 186, 106)));
                     pieHelperArrayList.add(new PieHelper(100-percentageOfBurn, Color.rgb(74, 141, 181)));
-//                    pieHelperArrayList.add(new PieHelper(percentageOfLeft, Color.BLUE));
+
 
                     pieView.setDate(pieHelperArrayList);
                     pieView.showPercentLabel(false); //optional

@@ -24,16 +24,9 @@ import java.util.ArrayList;
 
 public class EatActivity extends AppCompatActivity {
 
-    SearchView searchView;
     ListView listView;
     ArrayAdapter<Eat> adapter;
-    ArrayAdapter<Eat> adapter2;
-    TextView eat_item;
-    private InputStream inputStream;
-    private BufferedReader bufferedReader;
-    private ArrayList<String> foodArray;
     ArrayList<Eat> list;
-    ArrayList<Eat> list2;
     Intent intent;
     private DatabaseReference ref_eat;
     private DatabaseReference ref_basicInfo;
